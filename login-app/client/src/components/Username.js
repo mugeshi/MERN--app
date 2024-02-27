@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import avatar from '../assets/profile.png';
-import styles from '../styles/Username.module.css'; // Make sure the import path is correct
+import styles from '../styles/Username.module.css';
 
 export default function Username() {
   return (
     <div className="container mx-auto">
-      <div className='items-center h-screen'>
+      <div className='flex justify-center items-center h-screen'>
         <div className={styles.glass}>
           <div className="title flex flex-col items-center">
             <h4 className="text-5xl font-bold">Hello Again</h4>
@@ -17,10 +17,9 @@ export default function Username() {
           <form className="py-1">
             <div className='profile flex justify-center py-4'>
               <img src={avatar} className={styles.profile_img} alt="avatar"/>
-
             </div>
 
-            <div className="textbox flex flex-col items centre">
+            <div className="textbox flex flex-col items-center">
               <input className={styles.textbox} type="text" placeholder='Username'/>
               <button className={styles.btn} type='submit'>Let's Go</button>
             </div>
