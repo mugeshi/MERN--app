@@ -6,7 +6,7 @@
   border-width: 4px;
   border-color: #f3f4f6; /* Use the actual color you want, since "gray-50" is not a valid class for border color */
   flex-shrink: 0;
-  height: 100%; /* 3/4 */
+  height: 800%; /* 3/4 */
   width: 50%;
   border-radius: 1.5rem; /* rounded-3xl */
   padding-top: 20px;
@@ -15,21 +15,58 @@
   padding-right: 7px;
   max-width: 100%;
 }
-.profile_img{
-  @apply border-4 border-grey-100 w-[-135px] rounded-full shadow-lg cursor-pointer
-  @apply hover:border-gray-200;
+
+/* .profile_img */
+.profile_img {
+  border-width: 4px;
+  border-color: #e5e7eb; 
+  width: -135px;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
-.textbox{
-  @apply border-0 px-5 py-4 rounded-xl  w-3/4 shadow-sm text-lg;
-  @apply focus.outline-none;
-
+.profile_img:hover {
+  border-color: #d1d5db; 
 }
 
-.btn{
-  @apply border bg-indigo-500 w-3/4 rounded-lg text-xl shadow-sm text-centre;
+/* .textbox */
+.textbox {
+  border: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 1rem;
+  width: 75%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  outline: none;
+}
+
+/* .btn */
+.btn {
+  border: none;
+  background-color: #4f46e5; 
+  width: 60%;
+  border-radius: 0.6rem;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .btn:hover{
   background-color: #ff6a6a ;
+}
+
+.textbox input[type="text"] {
+  border: 1px solid #ccc; 
+  padding: 8px; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+.textbox input[type="text"]::placeholder {
+  color: #999696;
+  font-style: italic; 
 }

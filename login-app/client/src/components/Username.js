@@ -1,37 +1,32 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import avatar from '../assets/profile.png'
-import styles from '../styles/Username.module.css';
-
+import { Link } from 'react-router-dom';
+import avatar from '../assets/profile.png';
+import styles from '../styles/Username.module.css'; // Make sure the import path is correct
 
 export default function Username() {
   return (
     <div className="container mx-auto">
-      <div className=' items-center h-screen'>
+      <div className='items-center h-screen'>
         <div className={styles.glass}>
-          
           <div className="title flex flex-col items-center">
             <h4 className="text-5xl font-bold">Hello Again</h4>
             <span className="py-4 text-xl w-2/3 text-center black">
-                Explore More by connecting with
+              Explore More by connecting with
             </span>
           </div>
           <form className="py-1">
-            <div className='profile flex justify-center py-4' >
-            <img src={avatar} className={styles.profile-img} alt="avatar"/>
+            <div className='profile flex justify-center py-4'>
+              <img src={avatar} className='{styles.profile_img}' alt="avatar"/>
             </div>
 
-            <div className='textbox flex flex-col items-center gap-6'>
-              <input type="text"  placeholder='Username'/>
-              <button className='styles.btn' type='submit'>Let's Go</button>
+            <div className="textbox flex flex-col items centre">
+              <input className={styles.textbox} type="text" placeholder='Username'/>
+              <button className={styles.btn} type='submit'>Let's Go</button>
             </div>
 
-            <div className="text-centre py-4">
+            <div className="text-center py-4">
               <span className='text-gray-500'>Not a Member<Link className='text-red-500' to="/register">Register Now</Link></span>
-
             </div>
-
-
           </form>
         </div>
       </div>
