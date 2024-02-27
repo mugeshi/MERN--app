@@ -6,25 +6,26 @@
   border-width: 4px;
   border-color: #f3f4f6; /* Use the actual color you want, since "gray-50" is not a valid class for border color */
   flex-shrink: 0;
-  height: 800%; /* 3/4 */
-  width: 50%;
+  height: 75%; /* 3/4 */
+  width: 30%;
   border-radius: 1.5rem; /* rounded-3xl */
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 15px;
+  padding-left: 7px;
   padding-right: 7px;
   max-width: 100%;
 }
 
-/* .profile_img */
 .profile_img {
   border-width: 4px;
-  border-color: #e5e7eb; 
-  width: -135px;
+  border-color: #f0ece8; 
+  width: 100px; 
+  height: 90px; 
   border-radius: 50%;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+
 
 .profile_img:hover {
   border-color: #d1d5db; 

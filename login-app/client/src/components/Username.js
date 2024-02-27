@@ -16,7 +16,8 @@ export default function Username() {
           </div>
           <form className="py-1">
             <div className='profile flex justify-center py-4'>
-              <img src={avatar} className='{styles.profile_img}' alt="avatar"/>
+              <img src={avatar} className={styles.profile_img} alt="avatar"/>
+
             </div>
 
             <div className="textbox flex flex-col items centre">
