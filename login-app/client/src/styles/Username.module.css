@@ -6,7 +6,7 @@
   border-width: 4px;
   border-color: #f3f4f6; /* Use the actual color you want, since "gray-50" is not a valid class for border color */
   flex-shrink: 0;
-  height: 75%; /* 3/4 */
+  height: 100%; /* 3/4 */
   width: 50%;
   border-radius: 1.5rem; /* rounded-3xl */
   padding-top: 20px;
@@ -14,4 +14,22 @@
   padding-left: 15px;
   padding-right: 7px;
   max-width: 100%;
+}
+.profile_img{
+  @apply border-4 border-grey-100 w-[-135px] rounded-full shadow-lg cursor-pointer
+  @apply hover:border-gray-200;
+}
+
+.textbox{
+  @apply border-0 px-5 py-4 rounded-xl  w-3/4 shadow-sm text-lg;
+  @apply focus.outline-none;
+
+}
+
+.btn{
+  @apply border bg-indigo-500 w-3/4 rounded-lg text-xl shadow-sm text-centre;
+}
+
+.btn:hover{
+  background-color: #ff6a6a ;
 }

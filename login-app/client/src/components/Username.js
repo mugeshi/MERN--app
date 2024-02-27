@@ -18,12 +18,12 @@ export default function Username() {
           </div>
           <form className="py-1">
             <div className='profile flex justify-center py-4' >
-            <img src={avatar} alt="avatar"/>
+            <img src={avatar} className={styles.profile-img} alt="avatar"/>
             </div>
 
             <div className='textbox flex flex-col items-center gap-6'>
               <input type="text"  placeholder='Username'/>
-              <button type='submit'>Let's Go</button>
+              <button className='styles.btn' type='submit'>Let's Go</button>
             </div>
 
             <div className="text-centre py-4">
