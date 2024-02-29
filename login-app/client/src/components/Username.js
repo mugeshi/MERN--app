@@ -13,6 +13,7 @@ export default function Username() {
     initialValues :{
       username : ''
     },
+    validate: , 
     validateOnBlur: false,
     validationOnChange: false,
     onSubmit : async values => {
@@ -30,13 +31,13 @@ export default function Username() {
               Explore More by connecting with
             </span>
           </div>
-          <form className="py-1">
+          <form className="py-1" onSubmit={formik.handleSubmit}>
             <div className='profile flex justify-center py-4'>
               <img src={avatar} className={styles.profile_img} alt="avatar"/>
             </div>
 
             <div className="textbox flex flex-col items-center">
-              <input className={styles.textbox} type="text" placeholder='Username'/>
+              <input {...formik.getFieldProps('username ')}  className={styles.textbox} type="text" placeholder='Username'/>
               <button className={styles.btn} type='submit'>Let's Go</button>
             </div>
 
