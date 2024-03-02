@@ -11,7 +11,7 @@ export default function Password() {
 
   const formik =useFormik({
     initialValues :{
-      Password : ''
+      Password : 'admin123/'
     },
     validate:  passwordValidate, 
     validateOnBlur: false,
@@ -43,7 +43,7 @@ export default function Password() {
             </div>
 
             <div className="textbox flex flex-col items-center">
-          <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Password'/>
+          <input {...formik.getFieldProps('password')} className={styles.textbox} type="text" placeholder='Password'/>
           <button className={styles.btn} type='submit'>Sign in</button>
             </div> 
 
