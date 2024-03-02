@@ -1,19 +1,21 @@
 import toast from 'react-hot-toast';
 
+
+
 /** validate password */
 export async function passwordValidate(values) {
-    const errors = await passwordVerify({}, values);
+    const errors = {};
+    await passwordVerify(errors, values);
     return errors;
 }
 
 /** validate password */
-async function passwordVerify(errors = {}, values) {
+async function passwordVerify(errors, values) {
     const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
 
     if (!values.password) {
         errors.password = toast.error("Password Required...!");
     } else if (values.password.includes(" ")) {
-        // Check if error already exists before displaying a new one
         if (!errors.password) {
             errors.password = toast.error("Invalid Password...!");
         }
@@ -26,9 +28,10 @@ async function passwordVerify(errors = {}, values) {
             errors.password = toast.error("Password must have a special character");
         }
     }
-
-    return errors;
 }
+
+export default passwordValidate;
+
 
 /** validate username */
 export async function usernameValidate(values) {

@@ -43,9 +43,9 @@ export default function Password() {
             </div>
 
             <div className="textbox flex flex-col items-center">
-              <input {...formik.getFieldProps('Password ')}  className={styles.textbox} type="text" placeholder='password'/>
-              <button className={styles.btn} type='submit'>Let's Go</button>
-            </div>
+          <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Password'/>
+          <button className={styles.btn} type='submit'>Sign in</button>
+            </div> 
 
             <div className="text-center py-4">
               <span className='text-gray-500'>Forgot password ? <Link className='text-red-500' to="/Recovery">Recover Now</Link></span>
