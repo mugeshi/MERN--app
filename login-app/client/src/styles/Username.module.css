@@ -1,9 +1,4 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 
 
 .glass {
@@ -14,7 +9,7 @@
   border-width: 4px;
   border-color: #f3f4f6; 
   height: 75%; 
-  width: 30%;
+  width: 50%;
   border-radius: 1.5rem;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -77,4 +72,8 @@
 .textbox input[type="text"]::placeholder {
   color: #999696;
   font-style: italic; 
+}
+
+input[type="file"]{
+  display: none;
 }

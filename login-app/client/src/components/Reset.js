@@ -34,7 +34,7 @@ export default function Reset() {
           </div>
 
           <form  className="py-2" onSubmit={formik.handleSubmit}>
-            <div className="textbox flex flex-col items-center" >
+            <div className="textbox flex flex-col items-center gap-6" >
               <input id="form"
                 {...formik.getFieldProps("password")}
                 className={styles.textbox}
@@ -51,7 +51,7 @@ export default function Reset() {
               />
               
               <button className={styles.btn} type="submit">
-                Sign in
+                Reset
               </button>
             </div>
           </form>
