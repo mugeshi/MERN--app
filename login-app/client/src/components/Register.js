@@ -9,7 +9,7 @@ import convertToBase64 from '../helper/convert'
 
 export default function Register() {
   
-  const [file, setFile] = useState()
+  const [file, stateFile] = useState()
 
   const formik =useFormik({
     initialValues :{
@@ -27,10 +27,12 @@ export default function Register() {
   })
 
   //formik doesn't support file upload so we need to create the handler or a function
-  const onUpload = async e => {
-    const base64 = await convertToBase64()
-    baseFile(base64);
-  }
+ const onUpload = async e => {
+  console.log('File selected:', e.target.files[0]);
+  const base64 = await convertToBase64(e.target.files[0]);
+  stateFile(base64);
+}
+
 
 
   return (
@@ -55,7 +57,9 @@ export default function Register() {
               <img  src={file || avatar} className={styles.profile_img} alt="avatar"/>
               </label>
               
-              <input onChange={onUpload} type="file" id="profile" name="profile"/>
+              <input onChange={onUpload} type="file" id="profile" name="profile" />
+
+
 
             </div>
 
