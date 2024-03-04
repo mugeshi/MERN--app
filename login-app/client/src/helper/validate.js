@@ -1,17 +1,14 @@
 import toast from 'react-hot-toast';
 
-
-
-/** validate password */
+// Validate password
 export async function passwordValidate(values) {
     const errors = passwordVerify({}, values);
     return errors;
 }
 
-
-/** validate password */
+// Password verification function
 function passwordVerify(errors = {}, values) {
-    const specialchars = "!@#$%^&*()_+-={}[]|;:',.<>/?";
+    const specialChars = "!@#$%^&*()_+-={}[]|;:',.<>/?";
 
     if (!values.password) {
         errors.password = toast.error("Password Required...!");
@@ -22,35 +19,56 @@ function passwordVerify(errors = {}, values) {
     } else if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(values.password)) {
         errors.password = toast.error("Password must have special characters");
     }
+
     return errors;
 }
 
-
-/** validate username */
+// Validate username
 export async function usernameValidate(values) {
     const errors = usernameVerify({}, values);
     return errors;
 }
 
-/** validate username */
+// Username verification function
 function usernameVerify(errors = {}, values) {
     if (!values.username) {
         errors.username = toast.error('Username Required ...!');
     } else if (values.username.includes(" ")) {
         errors.username = toast.error('Invalid Username...!');
     }
+
     return errors;
 }
 
-
-//Validate Reset password
-export async function resetPasswordValidation(values){
+// Validate Reset password
+export async function resetPasswordValidation(values) {
     const errors = passwordVerify({}, values);
 
-    if(values.password != values.confirm_pwd){
-        errors.exist = toast.error('password not match...!')
+    if (values.password !== values.confirm_pwd) {
+        errors.exist = toast.error('Password does not match...!');
     }
 
-    return errors
+    return errors;
+}
 
+// Validate register form
+export async function registerValidate(values) {
+    const errors = usernameVerify({}, values);
+    passwordVerify(errors, values);
+    emailVerify(errors, values);
+
+    return errors;
+}
+
+// Validate email
+function emailVerify(errors = {}, values) {
+    if (!values.email) {
+        errors.email = toast.error("Email Required...!");
+    } else if (values.email.includes(" ")) {
+        errors.email = toast.error("Wrong Email...!");
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = toast.error("Invalid email address...!");
+    }
+
+    return errors;
 }

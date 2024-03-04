@@ -6,6 +6,7 @@ import {Toaster} from 'react-hot-toast';
 import {useFormik}  from 'formik'
 import {passwordValidate} from '../helper/validate'
 import convertToBase64 from '../helper/convert'
+import {registerValidate} from '../helper/validate'
 
 export default function Register() {
   
@@ -17,7 +18,7 @@ export default function Register() {
       username:'example@123',
       Password : 'admin123/'
     },
-    validate:  passwordValidate, 
+    validate:  registerValidate, 
     validateOnBlur: false,
     validationOnChange: false,
     onSubmit : async values => {
@@ -66,7 +67,7 @@ export default function Register() {
             <div className="textbox flex flex-col items-center gap-6">
           <input {...formik.getFieldProps('email')} className={styles.textbox} type="text" placeholder='Email*'/>
           <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Username*'/>
-          <input {...formik.getFieldProps('username')} className={styles.textbox} type="text" placeholder='Password'/>
+          <input {...formik.getFieldProps('password')} className={styles.textbox} type="text" placeholder='Password'/>
           <button className={styles.btn} type='submit'>Register</button>
             </div> 
 
